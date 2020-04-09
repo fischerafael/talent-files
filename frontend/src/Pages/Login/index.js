@@ -1,38 +1,35 @@
 import React from 'react';
-import { FiLogIn } from 'react-icons/fi';
 
-import './styles.css';
-import logo from '../../assets/logo-494ca2-e3e7f1.png';
+import { FiArrowLeft } from 'react-icons/fi';
 import heroImg from '../../assets/hero2.png';
+import './styles.css';
+
 
 export default function Logon() {
     return (
         <div className="container">
-            <div className="login-container">
-                <div className="login">                    
-                    <section className="form">                        
-                        <form>
-                            <div className="form-call">
-                                <img src={logo} alt="Talent Files Logo"/>
-                                <h1>Login</h1>
-                            </div>                            
-                            <div className="inputs">
-                                <input placeholder='Email' type='email'/>
-                                <input placeholder='Senha' type='password'/>
-                                <div className="inputs-button">
-                                    <button className='button' type='submit'>Entrar</button>
-                                    <button className='button button-reg' type='submit'>Cadastre-se</button>
-                                </div>                                
-                            </div>                   
-                            <a href="/cadastro">
-                                <FiLogIn size={20} color="3ad29f" />
-                                Voltar
-                            </a>
-                        </form>
-                    </section>
-                </div>                
-                <img src={heroImg} alt="Talent Files"/>
+            <div className="container-content">
+                <div className="container-content-img">
+                    <img src={heroImg} alt=""/>
+                </div>
+                <div className="container-content-form">
+                    <div className="container-content-form-text">
+                        <h1>Login</h1>    
+                    </div> 
+                    <form>
+                        <input className="email" type="text" placeholder="Seu email"/> 
+                        <input className="password" type="text" placeholder="Sua senha"/>
+                        <div className="container-content-form-input-button">
+                            <button className="button" type="submit">Entrar</button> 
+                            <button className="button" type="submit" >Cadastrar-se</button>   
+                        </div>
+                        <a href="/">
+                            <FiArrowLeft size={20} color="3ad29f"/>
+                            Voltar
+                        </a>   
+                    </form>   
+                </div>
             </div>
-        </div>        
+        </div>
     );     
 }

@@ -1,10 +1,23 @@
-.login-container {  
-    background: #fff;  
+.container {
+    background: #fff;
     width: 100%;
-    max-width: 1000px;
-    height: 100vh;
-    margin: 0 auto;
+    height: 100vh;   
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+}
 
+.container-content {
+    background: white;
+    height: 600px;    
+    width: 1000px;
+    padding: 100px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 100px rgba(0,0,0,.1);
+    
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
@@ -12,47 +25,31 @@
     justify-content: center;
 }
 
+.container-content-img {    
+    max-width: 400px;    
+}
+
 img:first-child {
-    max-width: 100px;    
+    max-width: 400px;
 }
 
-img:last-child {
-    max-width: 500px;
-}
-
-.login {
-    margin: auto;    
-}
-
-.form-call {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    align-items: baseline;
-}
-
-.login-container section.form {    
-    width: 100%;
-    max-width: 350px;
-    margin: 50px;
-}
-
-.login-container section.form form {
-    margin-top: 50px;
-}
-
-.login-container section.form form h1 {
+h1 {
     font-size: 30px;
-    margin-bottom: 30px;
-    color: #494ca2;
+    margin-bottom: 15px;    
 }
 
-.login-container section.form form input + input {
-    margin-top: 15px;
+.email {
+    margin-bottom: 15px;
 }
 
-.login-container section.form form a {
+.container-content-form-input-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+a {
     display: flex;
-    align-items: center;
     margin-top: 15px;
     color: #333;
     text-decoration: none;
@@ -61,23 +58,10 @@ img:last-child {
     transition: opacity 0.5s;
 }
 
-.login-container section.form form a svg {
+svg {
     margin-right: 10px;
 }
 
-.login-container section.form form a:hover {
+a:hover {
     opacity: 0.5;
 }
-
-.inputs-button {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-}
-
-.button-reg {    
-    background: rgba(68, 216, 167, 0.6);
-}
-
-
-
