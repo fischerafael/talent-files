@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 
-export default function ProSkill() {    
+export default function EduSkill() {    
     const [period, setPeriod] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -13,11 +13,11 @@ export default function ProSkill() {
 
     const history = useHistory();   
 
-    async function handleNewProSkill(e) {
+    async function handleNewSkill(e) {
         e.preventDefault();
 
         const data = {
-            type: "professional",
+            type: "education",
             period,
             title,
             description,
@@ -41,7 +41,7 @@ export default function ProSkill() {
     return (
         <div className="proskill-container">
             <div className="proskill-content">  
-                <h1>Experiências Profissionais</h1>                 
+                <h1>Educação</h1>                 
                     <form className="proskill-form">
                         <div className="proskill-f1">   
                             <input 
@@ -52,16 +52,16 @@ export default function ProSkill() {
                             />                         
                             <input 
                                 className="proskill-input-text" 
-                                placeholder="Cargo Ocupado"
+                                placeholder="Curso"
                                 value={title}                                
                                 onChange={e => setTitle(e.target.value)}
                             />
-                            <button onClick={handleNewProSkill} className="button button-proskill" type="submit">Adicionar Experiência</button>                                                       
+                            <button onClick={handleNewSkill} className="button button-proskill" type="submit">Adicionar Experiência</button>                                                       
                         </div>
                         <div className="proskill-f2">                            
                             <textarea 
                                 className="proskill-input-text" 
-                                placeholder="Descrição"
+                                placeholder="Descrição (Ex: Universidade, Departamento, Cidade, Estado e País)"
                                 value={description}                                
                                 onChange={e => setDescription(e.target.value)}
                             /> 

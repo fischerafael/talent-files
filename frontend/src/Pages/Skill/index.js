@@ -4,8 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 
-export default function ProSkill() {    
-    const [period, setPeriod] = useState('');
+export default function Skill() {   
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
 
@@ -13,12 +12,12 @@ export default function ProSkill() {
 
     const history = useHistory();   
 
-    async function handleNewProSkill(e) {
+    async function handleNewSkill(e) {
         e.preventDefault();
 
         const data = {
-            type: "professional",
-            period,
+            type: "skills",
+            period: "",
             title,
             description,
         };
@@ -41,30 +40,25 @@ export default function ProSkill() {
     return (
         <div className="proskill-container">
             <div className="proskill-content">  
-                <h1>Experiências Profissionais</h1>                 
+                <h1>Habilidades</h1>                 
                     <form className="proskill-form">
-                        <div className="proskill-f1">   
+                        <div className="proskill-f1">                                                    
+                                                                                   
+                        </div>
+                        <div className="proskill-f2">                            
                             <input 
                                 className="proskill-input-text" 
-                                placeholder="Período (Ex: 2017 - 2018)"
-                                value={period}                                
-                                onChange={e => setPeriod(e.target.value)}
-                            />                         
-                            <input 
-                                className="proskill-input-text" 
-                                placeholder="Cargo Ocupado"
+                                placeholder="Habilidade"
                                 value={title}                                
                                 onChange={e => setTitle(e.target.value)}
                             />
-                            <button onClick={handleNewProSkill} className="button button-proskill" type="submit">Adicionar Experiência</button>                                                       
-                        </div>
-                        <div className="proskill-f2">                            
                             <textarea 
                                 className="proskill-input-text" 
-                                placeholder="Descrição"
+                                placeholder="Descrição da habilidade"
                                 value={description}                                
                                 onChange={e => setDescription(e.target.value)}
-                            /> 
+                            />
+                            <button onClick={handleNewSkill} className="button button-proskill" type="submit">Adicionar Experiência</button>
                         </div>                                                
                         <div className="proskill-button">                            
                             <Link to="/profile">
