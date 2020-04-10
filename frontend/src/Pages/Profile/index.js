@@ -42,6 +42,22 @@ export default function Profile() {
         history.push('/login');
     }
 
+    async function handleProfileDelete() {
+        try {
+            await api.delete('users', {
+                headers: {
+                    Authorization: userEmail,
+                }
+            });
+
+            localStorage.clear();
+            history.push('/login');
+        }
+        catch (err) {
+            alert('Erro ao deletar o perfil, tente novamente.');
+        }
+    }
+
     return (
        <div className="profile-container">
             <div className="profile-header">
@@ -131,7 +147,12 @@ export default function Profile() {
                 </ul>
                 <Link className="button" type="button" to="/skill">+ Experiência</Link>
             </div>
-            
-       </div>
+            <div className="profile-professional">
+                <div className="profile-title">
+                    <h1>Deletar Perfil</h1>                    
+                </div>                
+            <Link className="button" type="button" onClick={handleProfileDelete}>Deletar Perfil</Link>
+            </div>            
+        </div>
     );
 }

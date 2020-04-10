@@ -10,6 +10,7 @@ const routes = express.Router();
 // Users Controllers
 routes.get('/users', UserController.index);
 routes.post('/users', UserController.create);
+routes.delete('/users', UserController.delete);
 
 // Skills Controllers
 routes.get('/skills', SkillController.index);

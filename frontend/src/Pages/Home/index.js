@@ -11,8 +11,12 @@ export default function Home() {
         api.get('users').then(response => {
             setUsers(response.data);
         })
-    }, []);       
-
+    }, []); 
+    
+    function handleUserSearch() {
+        
+    }
+    //<input placeholder="Procurar por Profissão"/>
     return (
        <div className="profile-container">
             <div className="profile-header">
@@ -21,20 +25,18 @@ export default function Home() {
                 <Link className="button button-menu" to="/login">Entrar</Link>                                         
             </div>
 
-            <div className="profile-professional">
+            <div className="profile-professional-main">
                 <div className="profile-title">
-                    <h1>Nossos Talentos</h1>
-                    <input                         
-                        type="email" 
-                        placeholder="Procurar por Profissão"                        
-                    />                    
+                    <h1>Nossos Talentos</h1>                                        
                 </div>
+                
                 <ul>
                     {users.map(user => (
                         <li key={user.id}>
-                        <p>{user.firstName} {user.lastName}</p>              
+                        <strong>{user.firstName} {user.lastName}</strong>              
                         <p>{user.profession}</p>
-                        <p>{user.id}</p>                       
+                        <p>{user.id}</p>  
+                        <p>{user.city},{user.uf}</p>                     
                         </li>
                     ))}                                        
                 </ul>

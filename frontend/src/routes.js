@@ -9,6 +9,7 @@ import ProSkill from './Pages/ProSkill';
 import EduSkill from './Pages/EduSkill';
 import Skill from './Pages/Skill';
 import Description from './Pages/Description';
+import CVs from './Pages/CVs';
 
 export default function Routes() {
     return (
@@ -22,6 +23,7 @@ export default function Routes() {
                 <Route path="/eduskill" component={EduSkill} />
                 <Route path="/skill" component={Skill} />
                 <Route path="/description" component={Description} />
+                <Route path="/cv" component={CVs} />
             </Switch>
         </BrowserRouter>
     );

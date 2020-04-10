@@ -95,18 +95,31 @@
     margin-bottom: 25px;
 }
 
-.profile-professional ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-    list-style: none;
+.profile-professional-main input {
+    width: 100%;
+    height: 60px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    background: white;
+    box-shadow: 0 0 100px rgba(0,0,0,.1);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 0 25px;
 }
 
-.profile-professional ul li {
+.profile-professional-main ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    list-style: none;    
+}
+
+.profile-professional-main ul li {
     padding: 25px;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 0 100px rgba(0,0,0,.1);
+    border: 1px solid #dcdce6;
 }
 
 .profile-professional ul li button {

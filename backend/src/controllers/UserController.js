@@ -33,5 +33,24 @@ module.exports = {
         })
     
         return res.json({ id });
+    },
+
+    async delete(req, res) {        
+        const user_id = req.headers.authorization;
+
+        const user = await dbconnection('users')
+            .where('id', user_id)
+            .select('id')
+            .first();
+
+        if (user.id !== user_id) {
+            return res.status(401).json({ error:'Operação não permitida'});
+        }
+
+        await dbconnection('users')
+            .where('id', user_id)
+            .delete();
+
+        return res.status(204).send();
     }
 }
