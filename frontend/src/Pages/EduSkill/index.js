@@ -44,6 +44,9 @@ export default function EduSkill() {
                 <h1>Educação</h1>                 
                     <form className="proskill-form">
                         <div className="proskill-f1">   
+                                                                                                         
+                        </div>
+                        <div className="proskill-f2">                          
                             <input 
                                 className="proskill-input-text" 
                                 placeholder="Período (Ex: 2017 - 2018)"
@@ -55,16 +58,14 @@ export default function EduSkill() {
                                 placeholder="Curso"
                                 value={title}                                
                                 onChange={e => setTitle(e.target.value)}
-                            />
-                            <button onClick={handleNewSkill} className="button button-proskill" type="submit">Adicionar Experiência</button>                                                       
-                        </div>
-                        <div className="proskill-f2">                            
+                            />      
                             <textarea 
                                 className="proskill-input-text" 
                                 placeholder="Descrição (Ex: Universidade, Departamento, Cidade, Estado e País)"
                                 value={description}                                
                                 onChange={e => setDescription(e.target.value)}
-                            /> 
+                            />     
+                            <button onClick={handleNewSkill} className="button button-proskill" type="submit">Adicionar Experiência</button>
                         </div>                                                
                         <div className="proskill-button">                            
                             <Link to="/profile">
