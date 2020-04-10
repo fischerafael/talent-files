@@ -18,8 +18,7 @@ export default function Profile() {
 
             <div className="profile-description">
                 <div className="profile-title">
-                    <h1>Perfil</h1>
-                    <button class="button" type="button">+ Descrição</button>
+                    <h1>Perfil</h1>                    
                 </div>
                 <div className="description">
                     <strong>Rafael Fischer</strong>
@@ -29,11 +28,11 @@ export default function Profile() {
                     </button>
                 </div>
             </div>
+            <Link class="button" type="button" to="/profile">+ Descrição</Link>
             
             <div className="profile-professional">
                 <div className="profile-title">
-                    <h1>Experiências Profissionais</h1>
-                    <button class="button" type="button">+ Experiência</button>
+                    <h1>Experiências Profissionais</h1>                    
                 </div>                
                 <ul>
                     <li>
@@ -59,8 +58,9 @@ export default function Profile() {
                         <button type="button">
                             <FiTrash2 size={20} color="3ad29f" />
                         </button>
-                    </li>
+                    </li>                    
                 </ul>
+                <Link class="button" type="button" to="/proskill">+ Experiência</Link>
             </div>
             
        </div>
