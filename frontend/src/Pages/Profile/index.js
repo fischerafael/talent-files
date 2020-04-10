@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
+import api from '../../services/api';
 import './styles.css';
 
 export default function Profile() {
+    const [skills, setSkills] = useState([]);
+
+    const userEmail = localStorage.getItem('userEmail');
+    const userName = localStorage.getItem('userName');
+ 
+    useEffect(() => {
+        api.get('profile', {
+            headers: {
+                Authorization: userEmail,
+            }
+        }).then(response => {
+            setSkills(response.data);
+        })
+    }, [userEmail]);
+
     return (
        <div className="profile-container">
             <div className="profile-header">
                 <img src={logo} alt="Talent Files"/>
-                <span>Olá, Rafael</span>
+                <span>Olá, {userName}</span>
                 <Link className="button button-menu">Ver Curriculo</Link>                    
                 <button>
                     <FiPower size={20} color="3ad29f"/>
@@ -28,39 +44,26 @@ export default function Profile() {
                     </button>
                 </div>
             </div>
-            <Link class="button" type="button" to="/profile">+ Descrição</Link>
+            <Link className="button" type="button" to="/profile">+ Descrição</Link>
             
             <div className="profile-professional">
                 <div className="profile-title">
                     <h1>Experiências Profissionais</h1>                    
                 </div>                
                 <ul>
-                    <li>
-                        <p>2018 - Atualmente</p>
-                        <strong>Desenvolvedor Fullstack</strong>
-                        <p>Desenvolvimento de aplicações web utilizando a stack NodeJS e ReactJS</p>
+                    {skills.filter(skill => skill.type == "professional").map(filteredSkill => (
+                        <li key={filteredSkill.id}>
+                        <p>{filteredSkill.period}</p>
+                        <strong>{filteredSkill.title}</strong>
+                        <p>{filteredSkill.description}</p>
                         <button type="button">
                             <FiTrash2 size={20} color="3ad29f" />
                         </button>
-                    </li>
-                    <li>
-                        <p>2018 - Atualmente</p>
-                        <strong>Desenvolvedor Fullstack</strong>
-                        <p>Desenvolvimento de aplicações web utilizando a stack NodeJS e ReactJS</p>
-                        <button type="button">
-                            <FiTrash2 size={20} color="3ad29f" />
-                        </button>
-                    </li>
-                    <li>
-                        <p>2018 - Atualmente</p>
-                        <strong>Desenvolvedor Fullstack</strong>
-                        <p>Desenvolvimento de aplicações web utilizando a stack NodeJS e ReactJS</p>
-                        <button type="button">
-                            <FiTrash2 size={20} color="3ad29f" />
-                        </button>
-                    </li>                    
+                        </li>
+                    ))}
+                                        
                 </ul>
-                <Link class="button" type="button" to="/proskill">+ Experiência</Link>
+                <Link className="button" type="button" to="/proskill">+ Experiência</Link>
             </div>
             
        </div>
