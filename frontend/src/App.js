@@ -2,11 +2,11 @@ import React from 'react';
 
 import './global.css';
 
-import Login from './Pages/Login';
+import Routes from './routes';
 
 export default function App() {
   return (
-    <Login />          
+    <Routes />          
   );
 }
 

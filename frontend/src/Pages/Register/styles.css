@@ -1,4 +1,4 @@
-.login-container {
+.register-container {
     background: #fff;
     width: 100%;
     height: 100vh;   
@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.login-content {
+.register-content {
     background: white;
     height: 600px;    
     width: 1000px;
@@ -19,32 +19,31 @@
     box-shadow: 0 0 100px rgba(0,0,0,.1);
     
     display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-form {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
     align-items: center;
     justify-content: center;
 }
 
-.login-img {    
-    max-width: 400px;    
-}
-
-img:first-child {
-    max-width: 400px;
-}
-
-.login-h1 {
-    font-size: 30px;
-    margin-bottom: 20px;    
-}
-
-.login-email {
+.register-input-text {
     margin-bottom: 15px;
 }
 
-.login-button {
+.register-form-location {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-gap: 15px;
 }
 
+.button-register {
+    margin: 0;
+    margin-bottom: 15px;
+}
