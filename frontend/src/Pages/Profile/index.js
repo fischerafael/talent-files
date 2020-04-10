@@ -6,8 +6,8 @@ import './styles.css';
 
 export default function Profile() {
     return (
-       <div className="register-container">
-            <div className="register-header">
+       <div className="profile-container">
+            <div className="profile-header">
                 <img src={logo} alt="Talent Files"/>
                 <span>Olá, Rafael</span>
                 <Link className="button button-menu">Ver Curriculo</Link>                    
@@ -19,10 +19,10 @@ export default function Profile() {
             <div className="profile-description">
                 <div className="profile-title">
                     <h1>Perfil</h1>
-                    <button class="button" type="button">Adicionar Experiência</button>
+                    <button class="button" type="button">+ Descrição</button>
                 </div>
                 <div className="description">
-                    <strong>Descrição</strong>
+                    <strong>Rafael Fischer</strong>
                     <p>Desenvolvedor Fullstack NodeJS e React JS</p>
                     <button type="button">
                         <FiTrash2 size={20} color="3ad29f" />
@@ -33,7 +33,7 @@ export default function Profile() {
             <div className="profile-professional">
                 <div className="profile-title">
                     <h1>Experiências Profissionais</h1>
-                    <button class="button" type="button">Adicionar Experiência</button>
+                    <button class="button" type="button">+ Experiência</button>
                 </div>                
                 <ul>
                     <li>
