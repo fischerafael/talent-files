@@ -118,8 +118,15 @@
     padding: 25px;
     border-radius: 10px;
     position: relative;
-    box-shadow: 0 0 100px rgba(0,0,0,.1);
-    border: 1px solid #dcdce6;
+    box-shadow: 0 0 100px rgba(0,0,0,.1);    
+}
+
+.profile-professional-main strong {
+    font-size: 20px;
+}
+
+.profile-professional-main p {
+    line-height: 20px;
 }
 
 .profile-professional ul li button {
@@ -138,10 +145,5 @@
     opacity: .5;
 }
 
-.profile-professional ul li strong {
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
+
 

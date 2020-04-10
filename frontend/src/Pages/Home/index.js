@@ -6,6 +6,8 @@ import './styles.css';
 
 export default function Home() {
     const [users, setUsers] = useState([]);   
+
+    const history = useHistory();
  
     useEffect(() => {
         api.get('users').then(response => {
@@ -13,10 +15,13 @@ export default function Home() {
         })
     }, []); 
     
-    function handleUserSearch() {
-        
+    function consultCV(id, firstName, lastName) {
+        localStorage.setItem('userEmail', id);
+        localStorage.setItem('userName', firstName);
+        localStorage.setItem('userLast', lastName);
+        history.push('/cv');
     }
-    //<input placeholder="Procurar por Profissão"/>
+    //<input placeholder="Procurar por Profissão" value={users} onChange={e => setUsers(e.target.value)} />
     return (
        <div className="profile-container">
             <div className="profile-header">
@@ -24,21 +29,22 @@ export default function Home() {
                 <span>Talent Files</span>
                 <Link className="button button-menu" to="/login">Entrar</Link>                                         
             </div>
-
+            
             <div className="profile-professional-main">
                 <div className="profile-title">
                     <h1>Nossos Talentos</h1>                                        
                 </div>
                 
                 <ul>
-                    {users.map(user => (
-                        <li key={user.id}>
-                        <strong>{user.firstName} {user.lastName}</strong>              
-                        <p>{user.profession}</p>
-                        <p>{user.id}</p>  
-                        <p>{user.city},{user.uf}</p>                     
+                    {users.filter(user => user.profession.includes("")).map(filteredUser => (
+                        <li key={filteredUser.id}>
+                        <strong>{filteredUser.firstName} {filteredUser.lastName}</strong>              
+                        <p>{filteredUser.profession}</p>
+                        <p>{filteredUser.id}</p>  
+                        <p>{filteredUser.city}, {filteredUser.uf}</p> 
+                        <button className="button" onClick={() => consultCV(filteredUser.id, filteredUser.firstName, filteredUser.lastName)}>Ver Currículo</button>                    
                         </li>
-                    ))}                                        
+                    ))}                                                            
                 </ul>
             </div>              
             
